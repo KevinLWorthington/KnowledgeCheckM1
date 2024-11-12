@@ -14,31 +14,38 @@ namespace KnowledgeCheck1_Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Press 1 for addition, 2 for subtraction, 3 for multiplication, and 4 for division");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Welcome to the worst calculator you've ever used!\n");
+            Console.WriteLine("Press 1 for addition, 2 for subtraction, 3 for multiplication, and 4 for division\n");
 
             var input = Console.ReadLine();
 
-            switch (input)
+                switch (input)
+                {
+                    case "1":
+                        Addition addition = new();
+                        break;
+
+                    case "2":
+                        Subtraction subtraction = new();
+                        break;
+
+                    case "3":
+                        Multiplication multiplication = new();
+                        break;
+
+                    case "4":
+                        Division division = new();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid selection");
+                        break;
+                }
+            
+            if (input.ToLower() == "exit")
             {
-                case "1":
-                    Addition addition = new Addition();
-                    break;
-
-                case "2":
-                    Subtraction subtraction = new Subtraction();
-                    break;
-
-                case "3":
-                    Multiplication multiplication = new Multiplication();
-                    break;
-
-                case "4":
-                    Division division = new Division();
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid selection");
-                    break;
+                Environment.Exit(0);
             }
             Console.WriteLine("Press any key to quit");
             Console.ReadKey();

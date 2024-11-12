@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace KnowledgeCheckM1
 {
-    public class Multiplication : Calculator
+    public class Multiplication
     {
         public Multiplication()
         {
             var calculator = new Calculator();
-            Console.WriteLine("Enter 2 integers to multiply:");
-            var mulNumber1 = Console.ReadLine();
-            var mulNumber2 = Console.ReadLine();
+            UserInput userInput = new();
 
-            if (int.TryParse(mulNumber1, out int mulNumOne) && int.TryParse(mulNumber2, out int mulNumTwo))
+            if (int.TryParse(userInput.NumOne, out int mulNumOne) && int.TryParse(userInput.NumTwo, out int mulNumTwo))
             {
                 Console.WriteLine($"{mulNumOne} * {mulNumTwo} = {calculator.Multiply(mulNumOne, mulNumTwo)}");
             }

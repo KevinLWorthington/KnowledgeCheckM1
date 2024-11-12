@@ -11,11 +11,9 @@ namespace KnowledgeCheckM1
         public Division()
         {
             var calculator = new Calculator();
-            Console.WriteLine("Enter 2 integers to divide:");
-            var divNumber1 = Console.ReadLine();
-            var divNumber2 = Console.ReadLine();
+            UserInput userInput = new UserInput();
 
-            if (int.TryParse(divNumber1, out int divNumOne) && int.TryParse(divNumber2, out int divNumTwo))
+            if (int.TryParse(userInput.NumOne, out int divNumOne) && int.TryParse(userInput.NumTwo, out int divNumTwo))
             {
                 try
                 {
