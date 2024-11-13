@@ -1,5 +1,4 @@
-﻿using KnowledgeCheckM1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +7,11 @@ using System.Threading.Tasks;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace KnowledgeCheck1_Calculator
+namespace KnowledgeCheckM1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Welcome to the worst calculator you've ever used!\n");
@@ -20,30 +19,30 @@ namespace KnowledgeCheck1_Calculator
 
             var input = Console.ReadLine();
 
-                switch (input)
-                {
-                    case "1":
-                        Addition addition = new();
-                        break;
+            switch (input)
+            {
+                case "1":
+                    _ = new Addition();
+                    break;
 
-                    case "2":
-                        Subtraction subtraction = new();
-                        break;
+                case "2":
+                    _ = new Subtraction();
+                    break;
 
-                    case "3":
-                        Multiplication multiplication = new();
-                        break;
+                case "3":
+                    _ = new Multiplication();
+                    break;
 
-                    case "4":
-                        Division division = new();
-                        break;
+                case "4":
+                    _ = new Division();
+                    break;
 
-                    default:
-                        Console.WriteLine("Invalid selection");
-                        break;
-                }
-            
-            if (input.ToLower() == "exit")
+                default:
+                    Console.WriteLine("Invalid selection");
+                    break;
+            }
+
+            if (input?.ToLower() == "exit")
             {
                 Environment.Exit(0);
             }
