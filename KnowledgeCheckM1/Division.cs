@@ -11,13 +11,20 @@ namespace KnowledgeCheckM1
         public Division()
         {
             var calculator = new Calculator();
-            UserInput userInput = new UserInput();
+            UserInput userInput = new();
 
             if (int.TryParse(userInput.NumOne, out int divNumOne) && int.TryParse(userInput.NumTwo, out int divNumTwo))
             {
                 try
                 {
-                    Console.WriteLine($"{divNumOne} / {divNumTwo} = {calculator.Divide(divNumOne, divNumTwo)}");
+                    if (divNumTwo == 0)
+                    {
+                        Console.WriteLine("Cannot divide by zero");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{divNumOne} / {divNumTwo} = {calculator.Divide(divNumOne, divNumTwo)}");
+                    }
                 }
                 catch (DivideByZeroException ex)
                 {
